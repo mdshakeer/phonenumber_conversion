@@ -1,8 +1,44 @@
 require_relative 'file_reader'
 
+
+def generate_text_for(num)
+	mapped_text = {"2" => ["a","b","c"],"3" => ["d","e","f"], "4" => ["g","h","i"], "5" => ["j","k","l"], "6"=>["m","n","o"], "7" => ["p","q","r","s"], "8" => ["t","u","v"], "9" => ["w","x","y","z"]}
+	text_list = file_to_array
+	com_list = []
+	list = []
+	if num.length == 10
+		num.split("").each do |le|
+			com_list << mapped_text[le]
+		end
+		com_list[0].each do |a|
+			com_list[1].each do |b|
+				com_list[2].each do |c|
+					com_list[3].each do |d|
+						com_list[4].each do |e|
+							com_list[5].each do |f|
+								com_list[6].each do |g|
+									com_list[7].each do |h|
+										com_list[8].each do |i|
+											com_list[9].each do |j|
+												list << a+b+c+d+e+f+g+h+i+j
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+		puts list.count
+	else
+		puts "length should be equal to 10"
+	end
+end
+
 start_time = Time.now
-puts file_to_array.size
+generate_text_for("8763976332")
 end_time = Time.now - start_time
 puts end_time
-
 
