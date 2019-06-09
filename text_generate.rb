@@ -20,7 +20,7 @@ def generate_text_for(num)
 									com_list[7].each do |h|
 										com_list[8].each do |i|
 											com_list[9].each do |j|
-												list << a+b+c+d+e+f+g+h+i+j
+												list << (a+b+c+d+e+f+g+h+i+j).upcase.chomp
 											end
 										end
 									end
@@ -31,14 +31,19 @@ def generate_text_for(num)
 				end
 			end
 		end
-		puts list.count
+		# puts text_list[98081]
+		# puts list[26638]
+		filtered_list = text_list & list
+		if filtered_list.size > 0
+			puts "1-800-"+filtered_list[0]
+		end
 	else
 		puts "length should be equal to 10"
 	end
 end
 
 start_time = Time.now
-generate_text_for("8763976332")
+generate_text_for("6686787825")
 end_time = Time.now - start_time
-puts end_time
+puts "Time taken for processing: #{end_time*1000}ms"
 

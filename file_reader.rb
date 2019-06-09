@@ -3,7 +3,7 @@ def file_to_array
 	#Open text file in read mode 
 	File.open("dictionary.txt", "r+") do |f|
 		f.each do |line|
-			a << line
+			a << line.chomp
 		end
 	end
 	return a
